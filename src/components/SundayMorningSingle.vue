@@ -9,10 +9,10 @@
         </div><!--/header-->
         <div class="order">
           <ol>
-            <li v-if="item.fields.Chorus"><strong>Choir Opener:</strong> {{ item.fields.Chorus ? item.fields.chorus_name[0] : '-' }}</li>
-            <li v-if="item.fields.Opening_Hymn"><strong>Hymn:</strong> {{ item.fields.Opening_Hymn ? item.fields.Opening_Hymn_Number[0] + ', '+item.fields.Opening_Hymn_Title[0] : '-' }}</li>
+            <li v-if="item.fields.Chorus"><strong>Chorus::</strong> {{ item.fields.Chorus ? item.fields.chorus_name[0] : '-' }}</li>
             <li><strong>Welcome &amp; Prayer</strong></li>
-            <li v-if="item.fields.Choir_Song"><strong>Choir Song: </strong>{{ item.fields.choir_song_name[0] }}</li>
+            <li v-if="item.fields.Hymns" v-for="(hymn_item,index) in item.fields.Hymns"><strong>Hymn:</strong>  {{ item.fields.Hymn_Number[index] }}, {{ item.fields.Hymn_Title[index] }}</li>
+            <li v-if="item.fields.Choir_Song" ><strong>Choir Song: </strong>{{ item.fields.choir_song_name[0] }}</li>
             <li v-else><strong>Choir Song: </strong>________________________</li>
             <span v-if='item.fields.Extra'>
             <li class="missionary" v-if="item.fields.extra_type[0] === 'Patch Singing'">{{ item.fields.extra_description[0] }}</li>
