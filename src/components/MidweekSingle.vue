@@ -9,10 +9,12 @@
         </div><!--/header-->
         <div class="order">
           <draggable class="dragarea source" @start="drag=true" @end="onEnd">
-            <li v-if="item.fields.Opening_Hymn" v-for="(single_item,index) in item.fields.Opening_Hymn">
-              <strong>Hymn:</strong> {{ item.fields.opening_hymn_number[index] + ', '+item.fields.opening_hymn_title[index]}}
-            </li>
             <li><strong>Welcome &amp; Prayer</strong></li>
+            <li v-if="item.fields.Choir_Song">
+              <span v-for="(choir_song_item,index) in item.fields.Choir_Song">
+                <strong>Choir Song: </strong>{{ item.fields.choir_song_name[index] }}
+              </span>              
+            </li>
             <li v-if="item.fields.Missionary_Name" v-for="single_item in item.fields.Missionary_Name"><strong>Missionary Letter: </strong>{{ single_item }}</li>
             <li v-if="item.fields.Hymns" v-for="(hymn_item,index) in item.fields.Hymns">
               <strong>Hymn: </strong> {{ item.fields.Hymn_Number[index] }}, {{ item.fields.Hymn_Title[index] }}
@@ -42,8 +44,12 @@
         </div><!--/header-->
         <div class="order">
           <div class="dragarea destination">
-            <li v-if="item.fields.Opening_Hymn"><strong>Hymn:</strong> {{ item.fields.Opening_Hymn ? item.fields.opening_hymn_number[0] + ', '+item.fields.opening_hymn_title[0] : '-' }}</li>
             <li><strong>Welcome &amp; Prayer</strong></li>
+            <li v-if="item.fields.Choir_Song">
+              <span v-for="(choir_song_item,index) in item.fields.Choir_Song">
+                <strong>Choir Song: </strong>{{ item.fields.choir_song_name[index] }}
+              </span>              
+            </li>
             <li><strong>Missionary Letter: </strong>{{item.fields.Missionary_Name[0]}}</li>
             <li v-if="item.fields.Hymns" v-for="(hymn_item,index) in item.fields.Hymns">
               <strong>Hymn: </strong> {{ item.fields.Hymn_Number[index] }}, {{ item.fields.Hymn_Title[index] }}

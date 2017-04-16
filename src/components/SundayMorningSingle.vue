@@ -18,14 +18,13 @@
               </span>              
             </li>
             <li v-else><strong>Choir Song: </strong>________________________</li>
+            <li v-if="item.fields.Missionary_Name" v-for="single_item in item.fields.Missionary_Name"><strong>Missionary Letter: </strong>{{ single_item }}</li>
             <li v-if='item.fields.Extra' class="missionary" v-for="(single_item,index) in item.fields.Extra">
               <span>{{ item.fields.extra_description[index] }}</span>
             </li>
-            <span v-if='item.fields.Special'>
-              <li class="missionary"  v-for="(special_item,index) in item.fields.Special">
+              <li class="missionary"  v-if='item.fields.Special' v-for="(special_item,index) in item.fields.Special">
                 <span>{{ item.fields.special_song_name[index] }} by {{ item.fields.Special_singer[index] }}</span>
               </li>
-            </span>
             <li v-if="item.fields.Chorus" v-for="(chrous_item,index) in item.fields.Chorus"><strong>Chorus & Fellowship:</strong> {{ item.fields.chorus_name[index] }}</li>
             <li v-if="item.fields.Hymns" v-for="(hymn_item,index) in item.fields.Hymns"><strong>Hymn:</strong>  {{ item.fields.Hymn_Number[index] }}, {{ item.fields.Hymn_Title[index] }}</li>
             <li class="announcements" v-if="item.fields.Announcements">
@@ -49,7 +48,7 @@
           <h2>{{ item.fields.Date | moment }}</h2>
         </div><!--/header-->
         <div class="order">
-          <div class="dragarea destination">
+          <draggable class="dragarea destination" @start="drag=true" @end="onEnd">
             <li v-if="item.fields.Chorus" v-for="(chrus_item,index) in item.fields.Chorus"><strong>Chorus::</strong> {{ item.fields.chorus_name[index] }}</li>
             <li><strong>Welcome &amp; Prayer</strong></li>
             <li v-if="item.fields.Hymns" v-for="(hymn_item,index) in item.fields.Hymns"><strong>Hymn:</strong>  {{ item.fields.Hymn_Number[index] }}, {{ item.fields.Hymn_Title[index] }}</li>
@@ -59,14 +58,13 @@
               </span>              
             </li>
             <li v-else><strong>Choir Song: </strong>________________________</li>
+            <li v-if="item.fields.Missionary_Name" v-for="single_item in item.fields.Missionary_Name"><strong>Missionary Letter: </strong>{{ single_item }}</li>
             <li v-if='item.fields.Extra' class="missionary" v-for="(single_item,index) in item.fields.Extra">
               <span>{{ item.fields.extra_description[index] }}</span>
             </li>
-            <span v-if='item.fields.Special'>
-              <li class="missionary"  v-for="(special_item,index) in item.fields.Special">
+              <li class="missionary"  v-if='item.fields.Special' v-for="(special_item,index) in item.fields.Special">
                 <span>{{ item.fields.special_song_name[index] }} by {{ item.fields.Special_singer[index] }}</span>
               </li>
-            </span>
             <li v-if="item.fields.Chorus" v-for="(chrous_item,index) in item.fields.Chorus"><strong>Chorus & Fellowship:</strong> {{ item.fields.chorus_name[index] }}</li>
             <li v-if="item.fields.Hymns" v-for="(hymn_item,index) in item.fields.Hymns"><strong>Hymn:</strong>  {{ item.fields.Hymn_Number[index] }}, {{ item.fields.Hymn_Title[index] }}</li>
             <li class="announcements" v-if="item.fields.Announcements">
@@ -81,7 +79,7 @@
               <br>
               <em>{{ item.fields.sermon_name[0] }}</em> <br>by {{ item.fields.sermon_preacher[0] }}
             </li>
-          </div>
+          </draggable>
         </div><!--/order-->
         </div><!--/half-page-->
       </div><!--/page-->
