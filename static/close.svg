@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="100pt" height="100pt" version="1.1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
- <g fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="4">
-  <path d="m36.949 39.051l26.102 25.898"/>
-  <path d="m37.051 65.051l25.898-26.102"/>
-  <path d="m18 22h62v62h-62z"/>
- </g>
+<svg width="90px" height="90px" viewBox="0 0 90 90" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.1 (39012) - http://www.bohemiancoding.com/sketch -->
+    <title>close</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="close" fill-rule="nonzero" fill="#D0011B">
+            <path d="M45,0 C20.102,0 0,20.102 0,45 C0,69.898 20.102,90 45,90 C69.898,90 90,69.898 90,45 C90,20.102 69.898,0 45,0 Z M67.898,60.199 C69.9996,62.3006 69.9996,65.699 67.898,67.8006 C66.7964,68.9022 65.4996,69.4022 64.0972,69.4022 C62.6988,69.4022 61.2964,68.9022 60.2964,67.8006 L45.3004,52.8006 L30.1984,67.8006 C29.0968,68.9022 27.8,69.4022 26.3976,69.4022 C24.9992,69.4022 23.5968,68.9022 22.5968,67.8006 C20.4952,65.699 20.4952,62.3006 22.5968,60.199 L37.6988,45.097 L22.6008,30.101 C20.4992,27.9994 20.4992,24.601 22.6008,22.4994 C24.7024,20.3978 28.1008,20.3978 30.2024,22.4994 L45.3044,37.6014 L60.4064,22.4994 C62.508,20.3978 65.9064,20.3978 68.008,22.4994 C70.1096,24.601 70.1096,27.9994 68.008,30.101 L52.899,45.199 L67.898,60.199 Z" id="Shape"></path>
+        </g>
+    </g>
 </svg>
