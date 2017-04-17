@@ -5,47 +5,47 @@
       <div class="half-page">
         <div class="header">
           <h1>PM Order of Service</h1>
-          <h2>{{ item.fields.Date | moment }}</h2>
+          <h2><img src="static/calendar.svg" alt="" class="calendar"> {{ item.fields.Date | moment }}</h2>
         </div><!--/header-->
         <div class="order">
           <draggable class="dragarea source" @start="drag=true" @end="onEnd">
-            <li><strong>Welcome &amp; Prayer</strong></li>
+            <li><img src="static/welcome.svg" alt=""><strong>Welcome &amp; Prayer</strong><a href="#" class="close"><img src="static/close.svg" alt=""></a></li>
             <li v-if="item.fields.Choir_Song">
               <span v-for="(choir_song_item,index) in item.fields.Choir_Song">
                 <strong>Choir Song: </strong>{{ item.fields.choir_song_name[index] }}
               </span>              
-            </li>
-            <li v-if="item.fields.Missionary_Name" v-for="single_item in item.fields.Missionary_Name"><strong>Missionary Letter: </strong>{{ single_item }}</li>
-            <li v-if="item.fields.Extras" class="missionary" v-for="(single_item,index) in item.fields.Extras">
-              {{ item.fields.extra_description[index] }}
-            </li>
-
-            <li v-if="item.fields.Chorus" v-for="(single_item,index) in item.fields.Chorus"><strong>Chorus & Fellowship:</strong> {{item.fields.chorus_name[index]}}</li>
-            <li v-if='item.fields.Special' v-for="(single_item,index) in item.fields.Special">
-              <strong>Special: </strong>{{ item.fields.Special_song_name[index] }} by {{ item.fields.Special_singer[index] }}
+            </li>            
+            <li v-if="item.fields.Missionary_Name" v-for="single_item in item.fields.Missionary_Name"><img src="static/missions.svg" alt=""><strong>Missionary Letter: </strong>{{ single_item }}<a href="#" class="close"><img src="static/close.svg" alt=""></a></li>
+            <li v-if='item.fields.Extras' class="missionary" v-for="(single_item,index) in item.fields.Extras">
+              <img src="static/extra.svg" alt=""><span>{{ item.fields.extra_description[index] }}</span>
+            <a href="#" class="close"><img src="static/close.svg" alt=""></a></li>
+            
+            <li v-if="item.fields.Chorus" v-for="(chrus_item,index) in item.fields.Chorus"><img src="static/chorus.svg" alt=""><strong>Chorus & Fellowship:</strong> {{ item.fields.chorus_name[index] }} <a href="#" class="close"><img src="static/close.svg" alt=""></a></li>
+            <li class="missionary" v-if='item.fields.Special' v-for="(single_item,index) in item.fields.Special">
+              <img src="static/special.svg" alt=""><span>{{ item.fields.Special_song_name[index] }} by {{ item.fields.Special_singer[index] }}</span>
+              <a href="#" class="close"><img src="static/close.svg" alt=""></a>
             </li>
             <li v-if="item.fields.Hymns" v-for="(hymn_item,index) in item.fields.Hymns">
-              <strong>Hymn: </strong> {{ item.fields.Hymn_Number[index] }}, {{ item.fields.Hymn_Title[index] }}
+              <img src="static/hymnal.svg" alt=""><strong>Hymn: </strong> {{ item.fields.Hymn_Number[index] }}, {{ item.fields.Hymn_Title[index] }} <a href="#" class="close"><img src="static/close.svg" alt=""></a>
             </li>
             <li class="announcements" v-if="item.fields.Announcements">
-              <strong>Announcements:</strong>
+              <img src="static/calendar.svg" alt=""><strong>Announcements:</strong>
               <br>
               <ul>
                 <li v-for="(announcement_item,index) in item.fields.Announcements">
-                  {{ item.fields.announcement_name[index] }}
+                  {{ item.fields.announcement_name[index] }}<a href="#" class="close"><img src="static/close.svg" alt=""></a>
                 </li>
               </ul>
             </li>
-            <li class="offering"><strong>Offering</strong></li>
+            <li class="offering" v-if="item.fields.Offering"><img src="static/offeratory.svg" alt=""><strong>Offering</strong>{{ item.fields.Offering_Musician[0] }} - <span v-if="item.fields.Offering_Song">{{ item.fields.Offering_Song[0] }}</span><a href="#" class="close"><img src="static/close.svg" alt=""></a></li>
+            <li class="offering" v-else><img src="static/offeratory.svg" alt=""><strong>Offering</strong><a href="#" class="close"><img src="static/close.svg" alt=""></a></li>
             <li v-if='item.fields.Special' v-for="(single_item,index) in item.fields.Special">
               <strong>Special: </strong>{{ item.fields.Special_song_name[index] }} by {{ item.fields.Special_singer[index] }}
             </li>
-            
-            <li class="sermon" v-if="item.fields.Sermon">
-              <strong>Sermon: </strong>
+            <li class="sermon" v-if="item.fields.Sermon"><img src="static/sermon.svg" alt=""><strong>Sermon: </strong>
               <br>
-              <em>{{item.fields.sermon_name[0]}}</em> <br>by {{item.fields.sermon_preacher[0]}}
-            </li>
+              <em>{{ item.fields.sermon_name[0] }}</em> <br>by {{ item.fields.sermon_preacher[0] }}
+            <a href="#" class="close"><img src="static/close.svg" alt=""></a></li>
           </draggable>         
         </div><!--/order-->
         </div><!--/half-page-->
@@ -56,42 +56,43 @@
         </div><!--/header-->
         <div class="order">
           <div class="dragarea destination">
-           <li><strong>Welcome &amp; Prayer</strong></li>
-           <li v-if="item.fields.Choir_Song">
+           <li><img src="static/welcome.svg" alt=""><strong>Welcome &amp; Prayer</strong><a href="#" class="close"><img src="static/close.svg" alt=""></a></li>
+            <li v-if="item.fields.Choir_Song">
               <span v-for="(choir_song_item,index) in item.fields.Choir_Song">
                 <strong>Choir Song: </strong>{{ item.fields.choir_song_name[index] }}
               </span>              
-            </li>
-            <li v-if="item.fields.Missionary_Name" v-for="single_item in item.fields.Missionary_Name"><strong>Missionary Letter: </strong>{{ single_item }}</li>
-            <li v-if="item.fields.Extras" class="missionary" v-for="(single_item,index) in item.fields.Extras">
-              {{ item.fields.extra_description[index] }}
-            </li>
-            <li v-if="item.fields.Chorus" v-for="(single_item,index) in item.fields.Chorus"><strong>Chorus & Fellowship:</strong> {{item.fields.chorus_name[index]}}</li>
-            <li v-if='item.fields.Special' v-for="(single_item,index) in item.fields.Special">
-              <strong>Special: </strong>{{ item.fields.Special_song_name[index] }} by {{ item.fields.Special_singer[index] }}
+            </li>            
+            <li v-if="item.fields.Missionary_Name" v-for="single_item in item.fields.Missionary_Name"><img src="static/missions.svg" alt=""><strong>Missionary Letter: </strong>{{ single_item }}<a href="#" class="close"><img src="static/close.svg" alt=""></a></li>
+            <li v-if='item.fields.Extras' class="missionary" v-for="(single_item,index) in item.fields.Extras">
+              <img src="static/extra.svg" alt=""><span>{{ item.fields.extra_description[index] }}</span>
+            <a href="#" class="close"><img src="static/close.svg" alt=""></a></li>
+            
+            <li v-if="item.fields.Chorus" v-for="(chrus_item,index) in item.fields.Chorus"><img src="static/chorus.svg" alt=""><strong>Chorus & Fellowship:</strong> {{ item.fields.chorus_name[index] }} <a href="#" class="close"><img src="static/close.svg" alt=""></a></li>
+            <li class="missionary" v-if='item.fields.Special' v-for="(single_item,index) in item.fields.Special">
+              <img src="static/special.svg" alt=""><span>{{ item.fields.Special_song_name[index] }} by {{ item.fields.Special_singer[index] }}</span>
+              <a href="#" class="close"><img src="static/close.svg" alt=""></a>
             </li>
             <li v-if="item.fields.Hymns" v-for="(hymn_item,index) in item.fields.Hymns">
-              <strong>Hymn: </strong> {{ item.fields.Hymn_Number[index] }}, {{ item.fields.Hymn_Title[index] }}
+              <img src="static/hymnal.svg" alt=""><strong>Hymn: </strong> {{ item.fields.Hymn_Number[index] }}, {{ item.fields.Hymn_Title[index] }} <a href="#" class="close"><img src="static/close.svg" alt=""></a>
             </li>
             <li class="announcements" v-if="item.fields.Announcements">
-              <strong>Announcements:</strong>
+              <img src="static/calendar.svg" alt=""><strong>Announcements:</strong>
               <br>
               <ul>
                 <li v-for="(announcement_item,index) in item.fields.Announcements">
-                  {{ item.fields.announcement_name[index] }}
+                  {{ item.fields.announcement_name[index] }}<a href="#" class="close"><img src="static/close.svg" alt=""></a>
                 </li>
               </ul>
             </li>
-            <li class="offering"><strong>Offering</strong></li>
+            <li class="offering" v-if="item.fields.Offering"><img src="static/offeratory.svg" alt=""><strong>Offering</strong>{{ item.fields.Offering_Musician[0] }} - <span v-if="item.fields.Offering_Song">{{ item.fields.Offering_Song[0] }}</span><a href="#" class="close"><img src="static/close.svg" alt=""></a></li>
+            <li class="offering" v-else><img src="static/offeratory.svg" alt=""><strong>Offering</strong><a href="#" class="close"><img src="static/close.svg" alt=""></a></li>
             <li v-if='item.fields.Special' v-for="(single_item,index) in item.fields.Special">
               <strong>Special: </strong>{{ item.fields.Special_song_name[index] }} by {{ item.fields.Special_singer[index] }}
             </li>
-            
-            <li class="sermon" v-if="item.fields.Sermon">
-              <strong>Sermon: </strong>
+            <li class="sermon" v-if="item.fields.Sermon"><img src="static/sermon.svg" alt=""><strong>Sermon: </strong>
               <br>
-              <em>{{item.fields.sermon_name[0]}}</em> <br>by {{item.fields.sermon_preacher[0]}}
-            </li>
+              <em>{{ item.fields.sermon_name[0] }}</em> <br>by {{ item.fields.sermon_preacher[0] }}
+            <a href="#" class="close"><img src="static/close.svg" alt=""></a></li>
           </div><!--/destination-->          
         </div><!--/order-->
         </div><!--/half-page-->
@@ -162,6 +163,10 @@ export default {
 <style scoped>
 @charset "UTF-8";
 @import url(https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i);
+img.calendar {
+  width: 30px;
+  margin-right: 5px;
+}
 .page h1,
 .page h2 {
     text-align: center;
@@ -207,7 +212,18 @@ export default {
     text-align: left
 }
 .page .dragarea li {
-    margin-bottom: .3in
+    margin-bottom: .2in;
+    position: relative;
+}
+.page .dragarea li a.close {
+    position: absolute;
+    top: -10px;
+    right: -5px;
+}
+.page .dragarea li img{
+    /*width: 20px;*/
+    height: 22px;
+    margin-right: 5px;
 }
 .page .dragarea li strong {
     font-style: normal;
@@ -244,7 +260,6 @@ export default {
 .page .dragarea li.announcements ul li:before,
 .page .dragarea li.missionary ul li:before,
 .page .dragarea li.sermon ul li:before {
-    content: '•';
     margin-right: 20px
 }
 .page .dragarea li.announcements ul li ul,
@@ -257,5 +272,10 @@ export default {
 .page .dragarea li.missionary ul li li:before,
 .page .dragarea li.sermon ul li li:before {
     content: '—'
+}
+@media print {
+  .page .dragarea li a.close {
+    display: none;
+}
 }
 </style>
