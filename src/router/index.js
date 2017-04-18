@@ -6,6 +6,7 @@ import List from '@/components/List'
 import SundayMorningSingle from '@/components/SundayMorningSingle'
 import SundayEveningSingle from '@/components/SundayEveningSingle'
 import MidweekSingle from '@/components/MidweekSingle'
+import PrayerRequests from '@/components/PrayerRequests'
 
 Vue.use(Router)
 
@@ -72,5 +73,19 @@ export default new Router({
 			}				
 		}
 	},
+	{ 
+		path: '/prayer-requests', 
+		name:'prayer-requests', 
+		component: PrayerRequests,
+		beforeEnter: (to, from, next) => {
+			var app_id = localStorage.getItem('app_id');
+			var app_key = localStorage.getItem('app_key');
+			if( !(app_id  && app_key) ){
+				next('/login');
+			}else{
+				next();
+			}				
+		}
+	}
   ]
 })
