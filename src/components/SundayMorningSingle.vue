@@ -4,7 +4,7 @@
     <div class="page" v-if="item">
       <div class="half-page">
         <div class="header">
-          <h1>AM Order of Service</h1>
+          <h1><span v-if="item.fields.Service_Type == 'Sunday AM'">AM</span><span v-if="item.fields.Service_Type == 'Sunday PM'">PM</span><span v-if="item.fields.Service_Type == 'Midweek'">Midweek</span> Order of Service</h1>
           <h2>{{ item.fields.Date | moment }}</h2>
         </div><!--/header-->
         <div class="order">
