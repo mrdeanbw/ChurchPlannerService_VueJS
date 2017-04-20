@@ -5,7 +5,7 @@
       <div class="half-page">
         <div class="header">
           <h1>PM Order of Service</h1>
-          <h2><img src="static/calendar.svg" alt="" class="calendar"> {{ item.fields.Date | moment }}</h2>
+          <h2>{{ item.fields.Date | moment }}</h2>
         </div><!--/header-->
         <div class="order">
           <draggable class="dragarea source" @start="drag=true" @end="onEnd">
@@ -52,7 +52,7 @@
         <div class="half-page">
         <div class="header">
           <h1>PM Order of Service</h1>
-          <h2><img src="static/calendar.svg" alt="" class="calendar"> {{ item.fields.Date | moment }}</h2>
+          <h2>{{ item.fields.Date | moment }}</h2>
         </div><!--/header-->
         <div class="order">
           <div class="dragarea destination">

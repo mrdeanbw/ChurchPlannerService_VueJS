@@ -5,7 +5,7 @@
       <div class="half-page">
         <div class="header">
           <h1>AM Order of Service</h1>
-          <h2><img src="static/calendar.svg" alt="" class="calendar"> {{ item.fields.Date | moment }}</h2>
+          <h2>{{ item.fields.Date | moment }}</h2>
         </div><!--/header-->
         <div class="order">
           <draggable class="dragarea source" @start="drag=true" @end="onEnd">
@@ -44,7 +44,7 @@
       <div class="half-page">
         <div class="header">
           <h1>AM Order of Service</h1>
-          <h2><img src="static/calendar.svg" alt="" class="calendar"> {{ item.fields.Date | moment }}</h2>
+          <h2>{{ item.fields.Date | moment }}</h2>
         </div><!--/header-->
         <div class="order">
           <div class="dragarea destination">
@@ -135,7 +135,7 @@ export default {
       var _self = this;
       this.loading = true;
       if(this.app_id != "" && this.app_key != ""){
-        axios.get('https://api.airtable.com/v0/'+this.app_id+'/Sunday_Morning/'+this.id+'?api_key='+this.app_key)
+        axios.get('https://api.airtable.com/v0/'+this.app_id+'/Services/'+this.id+'?api_key='+this.app_key)
           .then(function (response) {
             _self.item = response.data;
             _self.loading = false;
@@ -207,9 +207,14 @@ img.calendar {
     position: relative;
 }
 .page .dragarea li a.close {
+  position: absolute;
+    top: 0;
+    right: 0;
+}
+.page .dragarea li a.close {
     position: absolute;
-    top: -10px;
-    right: -5px;
+    top: 0;
+    right: 0;
 }
 .page .dragarea li img{
     /*width: 20px;*/

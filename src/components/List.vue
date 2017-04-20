@@ -6,22 +6,29 @@
     <h3>Sunday Morning</h3>
     <span v-if="loading_morning_items">Loading items...</span>
     <ul v-if="sunday_morning_items.length > 0 ">      
-      <li v-for="item in sunday_morning_items">                    
+      <li v-for="item in sunday_morning_items" v-if="item.fields.Service_Type == 'Sunday AM'">                    
         <router-link :to="{name:'sunday-morning-single',params:{'id':item.id}}">{{ item.fields.Date | moment }}</router-link>
       </li>
     </ul>
     <h3>Sunday Evening</h3>
-    <span v-if="loading_evening_items">Loading items...</span>
-    <ul v-if="sunday_evening_items.length > 0 ">      
-      <li v-for="item in sunday_evening_items">                    
-        <router-link :to="{name:'sunday-evening-single',params:{'id':item.id}}">{{ item.fields.Date | moment }}</router-link>
+    <span v-if="loading_morning_items">Loading items...</span>
+    <ul v-if="sunday_morning_items.length > 0 ">      
+      <li v-for="item in sunday_morning_items" v-if="item.fields.Service_Type == 'Sunday PM'">                    
+        <router-link :to="{name:'sunday-morning-single',params:{'id':item.id}}">{{ item.fields.Date | moment }}</router-link>
       </li>
     </ul>
     <h3>Midweek</h3>
-    <span v-if="loading_midweek_items">Loading items...</span>
-    <ul v-if="midweek_items.length > 0 ">      
-      <li v-for="item in midweek_items">                    
-        <router-link :to="{name:'midweek-single',params:{'id':item.id}}">{{ item.fields.Date | moment }}</router-link>
+    <span v-if="loading_morning_items">Loading items...</span>
+    <ul v-if="sunday_morning_items.length > 0 ">      
+      <li v-for="item in sunday_morning_items" v-if="item.fields.Service_Type == 'Midweek'">                    
+        <router-link :to="{name:'sunday-morning-single',params:{'id':item.id}}">{{ item.fields.Date | moment }}</router-link>
+      </li>
+    </ul>
+    <h3>Other</h3>
+    <span v-if="loading_morning_items">Loading items...</span>
+    <ul v-if="sunday_morning_items.length > 0 ">      
+      <li v-for="item in sunday_morning_items" v-if="item.fields.Service_Type == 'Other'">                    
+        <router-link :to="{name:'sunday-morning-single',params:{'id':item.id}}">{{ item.fields.Date | moment }}</router-link> 
       </li>
     </ul>
   </div>
@@ -71,7 +78,7 @@ export default {
       var _self = this;
       if(this.app_id != "" && this.app_key != ""){
         this.loading_morning_items = true;
-        axios.get('https://api.airtable.com/v0/'+this.app_id+'/Sunday_Morning?&view=services&api_key='+this.app_key)
+        axios.get('https://api.airtable.com/v0/'+this.app_id+'/Services?&view=services&api_key='+this.app_key)
         .then(function (response) {
           if(response.data.records){
             _self.sunday_morning_items = response.data.records;
@@ -83,7 +90,7 @@ export default {
         });
 
         this.loading_evening_items = true;
-        axios.get('https://api.airtable.com/v0/'+this.app_id+'/Sunday_Evening?&view=Grid%20view&api_key='+this.app_key)
+        axios.get('https://api.airtable.com/v0/'+this.app_id+'/Services?&view=services&api_key='+this.app_key)
         .then(function (response) {
           if(response.data.records){
             _self.sunday_evening_items = response.data.records;
@@ -95,7 +102,7 @@ export default {
         });
 
         this.loading_midweek_items = true;
-        axios.get('https://api.airtable.com/v0/'+this.app_id+'/Midweek?&view=Grid%20view&api_key='+this.app_key)
+        axios.get('https://api.airtable.com/v0/'+this.app_id+'/Services?&view=services&api_key='+this.app_key)
         .then(function (response) {
           if(response.data.records){
             _self.midweek_items = response.data.records;
