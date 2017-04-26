@@ -38,12 +38,14 @@
               <br>
               <em>{{ item.fields.sermon_name[0] }}</em> <br>by {{ item.fields.sermon_preacher[0] }}
             <a href="javascript:void(0)" @click="removeElement($event)" class="close"><img src="static/close.svg" alt=""></a></li>
+            <li class="sermon" v-else><img src="static/sermon.svg" alt=""><strong>Sermon: </strong>
+            <a href="javascript:void(0)" @click="removeElement($event)" class="close"><img src="static/close.svg" alt=""></a></li>
           </draggable>
         </div><!--/order-->
         </div><!--/half-page-->
       <div class="half-page">
         <div class="header">
-          <h1>AM Order of Service</h1>
+          <h1><span v-if="item.fields.Service_Type == 'Sunday AM'">AM</span><span v-if="item.fields.Service_Type == 'Sunday PM'">PM</span><span v-if="item.fields.Service_Type == 'Midweek'">Midweek</span> Order of Service</h1>
           <h2>{{ item.fields.Date | moment }}</h2>
         </div><!--/header-->
         <div class="order">
