@@ -1,0 +1,88 @@
+[33mcommit 86690d5cc881312b793aa09c34c0ef0746e6119c[m
+Author: Ryan Hayden <pastorryanhayden@gmail.com>
+Date:   Mon May 8 15:36:22 2017 -0500
+
+    changed to one column on screen
+
+[33mcommit c0cd5a2500673308e055340bb49f1ad473a4bf68[m
+Author: Ryan Hayden <pastorryanhayden@gmail.com>
+Date:   Wed Apr 26 14:40:36 2017 -0500
+
+    Fixed annoying service bug
+
+[33mcommit 27026d11ad1353b4ff6aa38b09eb50e3fd27fa65[m
+Author: Ryan Hayden <pastorryanhayden@gmail.com>
+Date:   Wed Apr 19 19:03:56 2017 -0500
+
+    Added conditional to main component
+
+[33mcommit faa14afbddd069d256c1b46b086c64477e435e2e[m
+Author: Ryan Hayden <pastorryanhayden@gmail.com>
+Date:   Wed Apr 19 19:01:16 2017 -0500
+
+    Changed the way it works so that there is no need for multiple tables and views
+
+[33mcommit 4942c69067c2e596033258f36bff7b89167922f4[m
+Author: Chirag Parekh <chiragparekhn@gmail.com>
+Date:   Tue Apr 18 16:25:54 2017 +0530
+
+    Prayer request page added.
+
+[33mcommit 307a695bb52f8923643df2b2cd98924353898495[m
+Author: Chirag Parekh <chiragparekhn@gmail.com>
+Date:   Mon Apr 17 17:39:40 2017 +0530
+
+    1) Look at the Sunday AM component.  I want PM and Midweek to be exactly like this (Obviously different title at top and pointing to different data.)
+    2) I've added some close handles, these needed to be added in PM and Midweek and setup so that when clicked they remove that item from the list (both sides.)
+
+[33mcommit 8c8c160ddb643f0239fbca50f585ca5c60b67777[m
+Author: Chirag Parekh <chiragparekhn@gmail.com>
+Date:   Mon Apr 17 13:15:40 2017 +0530
+
+    Copied structure to AM to PM
+
+[33mcommit 722c49578ae232ef8b6ed993636b2efe4bb37f6f[m
+Author: Ryan Hayden <pastorryanhayden@gmail.com>
+Date:   Sun Apr 16 22:45:23 2017 -0500
+
+    Changed close handle
+
+[33mcommit 3f303ee1291cbb59c0083530a9f698c1ec304305[m
+Author: Ryan Hayden <pastorryanhayden@gmail.com>
+Date:   Sun Apr 16 22:37:20 2017 -0500
+
+    Mirrored right side but with no remove buttons
+
+[33mcommit 86ea083c6233f5f2ce866a7dabf1b1eb16c0a6b1[m
+Author: Ryan Hayden <pastorryanhayden@gmail.com>
+Date:   Sun Apr 16 22:33:57 2017 -0500
+
+    Added icons and close handles
+
+[33mcommit 84388624c4f4215821e4171d3a761ad0338e4690[m
+Author: Ryan Hayden <pastorryanhayden@gmail.com>
+Date:   Sun Apr 16 17:01:28 2017 -0500
+
+    Added missions letters to each service, cleaned it up.
+
+[33mcommit b363223c2421a70a9eb06b835eea3624aa46805f[m
+Author: Chirag Parekh <chiragparekhn@gmail.com>
+Date:   Sun Apr 16 12:35:18 2017 +0530
+
+    Accomplish follwoing tasks:
+    
+    1) Impliment the vue-sortable so that the elements can be sorted.
+    2) Change all field types to be for loops (like hymns in original)
+    3) Make it so that one side mirrors the other.
+
+[33mcommit 427f6755f0469ea3e97d60e29b691a2e931902be[m
+Author: Ryan Hayden <pastorryanhayden@gmail.com>
+Date:   Sat Apr 15 08:10:17 2017 -0500
+
+    I don't know
+
+[33mcommit 61b0e40d9c937da83d5dd17f8c2232b85dcb8340[m
+Author: Ryan Hayden <pastorryanhayden@gmail.com>
+Date:   Sat Apr 15 07:55:29 2017 -0500
+
+    Initial commit

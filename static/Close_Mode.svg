@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="5384 1892 136 136">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #e30000;
+        stroke: #95989a;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-3 {
+        stroke: none;
+      }
+
+      .cls-4 {
+        fill: none;
+      }
+
+      .cls-5 {
+        filter: url(#Ellipse_5);
+      }
+    </style>
+    <filter id="Ellipse_5" x="5384" y="1892" width="136" height="136" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Group_21" data-name="Group 21" transform="translate(3587 202)">
+    <g class="cls-5" transform="matrix(1, 0, 0, 1, -3587, -202)">
+      <g id="Ellipse_5-2" data-name="Ellipse 5" class="cls-1" transform="translate(5393 1898)">
+        <circle class="cls-3" cx="59" cy="59" r="59"/>
+        <circle class="cls-4" cx="59" cy="59" r="58.5"/>
+      </g>
+    </g>
+    <path id="np_remove_991609_FFFFFF" class="cls-2" d="M54.6,49.1,74.1,68.6l-5.5,5.5L49.1,54.6l-19.5,19.4-5.5-5.5L43.6,49.1,24.2,29.6l5.5-5.5L49.1,43.6,68.6,24.1l5.5,5.5Z" transform="translate(1815.898 1707.898)"/>
+  </g>
+</svg>

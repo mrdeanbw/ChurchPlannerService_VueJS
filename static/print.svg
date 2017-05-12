@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="2543 1695 168 168">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #9e9e9e;
+        stroke: #95989a;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-3 {
+        stroke: none;
+      }
+
+      .cls-4 {
+        fill: none;
+      }
+
+      .cls-5 {
+        filter: url(#Ellipse_6);
+      }
+    </style>
+    <filter id="Ellipse_6" x="2543" y="1695" width="168" height="168" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Group_4" data-name="Group 4" transform="translate(277 12)">
+    <g class="cls-5" transform="matrix(1, 0, 0, 1, -277, -12)">
+      <g id="Ellipse_6-2" data-name="Ellipse 6" class="cls-1" transform="translate(2552 1701)">
+        <circle class="cls-3" cx="75" cy="75" r="75"/>
+        <circle class="cls-4" cx="75" cy="75" r="74.5"/>
+      </g>
+    </g>
+    <path id="np_print_942605_FFFFFF" class="cls-2" d="M22.214,3.492a6.223,6.223,0,0,0-6.229,6.229v3.636H48.512V9.721h.013a6.232,6.232,0,0,0-6.241-6.229ZM6.753,15.738A6.766,6.766,0,0,0,0,22.505V44.194a6.752,6.752,0,0,0,6.758,6.758h3.26V39.634a3.591,3.591,0,0,1,3.565-3.565H50.9a3.577,3.577,0,0,1,3.565,3.565V50.952h3.26A6.749,6.749,0,0,0,64.5,44.194V22.505a6.761,6.761,0,0,0-6.768-6.768H6.75ZM46.6,22.447h3.825a1.559,1.559,0,0,1,1.56,1.56v3.812a1.559,1.559,0,0,1-1.56,1.56H46.6a1.551,1.551,0,0,1-1.55-1.56V24.007A1.551,1.551,0,0,1,46.6,22.447ZM13.579,38.459a1.18,1.18,0,0,0-1.184,1.184V62.3a1.19,1.19,0,0,0,1.184,1.2H50.915a1.2,1.2,0,0,0,1.2-1.2V39.644a1.19,1.19,0,0,0-1.2-1.184Zm1.2,2.368H49.731V61.1H14.776Zm4.611,3.966a1.184,1.184,0,1,0,0,2.368H44.982a1.184,1.184,0,0,0,0-2.368Zm0,5.09a1.191,1.191,0,1,0,0,2.381H44.982a1.191,1.191,0,0,0,0-2.381Zm0,5.115a1.191,1.191,0,1,0,0,2.381H44.982a1.191,1.191,0,0,0,0-2.381Z" transform="translate(2318.005 1730.508)"/>
+  </g>
+</svg>
